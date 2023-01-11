@@ -25,7 +25,9 @@ const generateAction = async (req, res) => {
   );
 
   // Check for different statuses to send proper payload
+  console.log(response + 'response');
   if (response.ok) {
+    console.log(response);
     const buffer = await response.buffer();
     const base64 = bufferToBase64(buffer);
     res.status(200).json({ image: base64 });
